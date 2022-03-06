@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux'
 import Link from 'next/link'
-import Counter from '../src/components/Counter'
+import Counter from '../../src/components/Counter'
+import { ReactElement } from 'react'
+import Layout from '../../src/components/Layout'
 
 const codeStyle = {
 	background: '#ebebeb',
@@ -27,3 +29,11 @@ const ShowReduxState = () => {
 }
 
 export default ShowReduxState
+
+ShowReduxState.getLayout = function getLayout(page: ReactElement) {
+	return (
+		<Layout>
+			{page}
+		</Layout>
+	)
+}

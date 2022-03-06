@@ -39,7 +39,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 				</Box>
 			</main>
 			<footer>
-				<Copyright />
+				<Box
+					sx={{
+						my: 4,
+						display: 'flex',
+						flexDirection: 'column',
+						justifyContent: 'center',
+						alignItems: 'center',
+					}}
+				>
+					<Copyright />
+				</Box>
 			</footer>
 		</Container>
 	)

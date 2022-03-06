@@ -20,6 +20,16 @@ const initialProblemState: initialProblemStateType = {
 // PROBLEM REDUCER
 export const problemReducer = (state = initialProblemState, { type, payload }: { type: string, payload: any }) => {
 	switch (type) {
+		case types.SET_PROBLEM_INFORMATION:
+			return {
+				...state,
+				problem: {
+					...state.problem,
+					title: payload.title,
+					author: payload.author,
+					description: payload.description,
+				},
+			}
 		case types.ADD_QUESTION:
 			return {
 				...state,
@@ -27,11 +37,7 @@ export const problemReducer = (state = initialProblemState, { type, payload }: {
 					...state.problem,
 					questions: [
 						...state.problem.questions,
-						{
-							id: state.problem.questions.length.toString(),
-							question: '',
-							answers: [],
-						},
+						payload,
 					],
 				},
 			}

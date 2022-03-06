@@ -23,7 +23,7 @@ export default function Home() {
       <br />
       <Button sx={{ mb: 2 }} variant="contained" href="/test">테스트 시작하기</Button>
       <Button sx={{ mb: 2 }} variant="outlined" href="/create">나만의 테스트 만들기</Button>
-      <Button variant="outlined" href="/show-redux-state">리덕스 상태 보기</Button>
+      <Button variant="outlined" href="/test/show-redux-state">리덕스 상태 보기</Button>
     </>
   )
 }

@@ -1,16 +1,17 @@
 export interface IExample {
-	id: string;
+	id: string | number;
 	questionId: string;
 	content: string;
 }
+
 export interface IQuestion {
-	id: string;
+	id: string | number;
 	question: string;
 	answers: IExample[];
 }
 
 export interface IProblem {
-	id: string;
+	id: string | number;
 	title: string;
 	author: string;
 	description: string;
@@ -18,7 +19,7 @@ export interface IProblem {
 }
 
 export interface IAnswer {
-	id: string;
+	id: string | number;
 	user: string;
 	problemId: string;
 	answers: IExample[];
