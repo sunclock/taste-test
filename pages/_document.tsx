@@ -1,7 +1,7 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext } from 'next/document'
 import createEmotionServer from '@emotion/server/create-instance';
-import theme from '../styles/theme';
-import createEmotionCache from '../utils/createEmotionCache';
+import theme from '../src/styles/theme';
+import createEmotionCache from '../src/utils/createEmotionCache';
 
 export default function MyDocument(props: any) {
 	return (
@@ -14,6 +14,9 @@ export default function MyDocument(props: any) {
 					rel="stylesheet"
 					href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
 				/>
+				<link
+					rel="stylesheet"
+					href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 				{/* Inject MUI styles first to match with the prepend: true configuration. */}
 				{(props as any).emotionStyleTags}
 			</Head>

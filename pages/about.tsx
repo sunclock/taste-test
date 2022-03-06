@@ -2,10 +2,10 @@ import { ReactElement } from 'react';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import Link from '../components/Link';
-import ProTip from '../components/ProTip';
-import Copyright from '../components/Copyright';
-import Layout from '../components/Layout';
+import Link from '../src/components/Link';
+import ProTip from '../src/components/ProTip';
+import Copyright from '../src/components/Copyright';
+import Layout from '../src/components/Layout';
 
 export default function About() {
 	return (

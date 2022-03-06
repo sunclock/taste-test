@@ -13,11 +13,16 @@
     "@emotion/react": "latest",
     "@emotion/server": "latest",
     "@emotion/styled": "latest",
+    "@material-ui/core": "latest",
     "@mui/icons-material": "latest",
     "@mui/material": "latest",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-redux": "latest",
+    "redux": "latest",
+    "redux-thunk": "latest",
+    "redux-devtools-extension": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",

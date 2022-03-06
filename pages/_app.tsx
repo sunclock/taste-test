@@ -5,8 +5,10 @@ import Head from 'next/head'
 import { CssBaseline } from '@mui/material'
 import { ThemeProvider } from '@mui/material/styles';
 import { CacheProvider, EmotionCache } from '@emotion/react'
-import theme from '../styles/theme'
-import createEmotionCache from '../utils/createEmotionCache';
+import theme from '../src/styles/theme'
+import createEmotionCache from '../src/utils/createEmotionCache';
+import { Provider } from 'react-redux'
+import { useStore } from '../src/redux/store'
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
@@ -24,6 +26,7 @@ export default function App(props: AppPropsWithLayout) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
   // Use the layout defined at the page level, if available
   const getLayout = Component.getLayout ?? ((page) => page)
+  const store = useStore(pageProps.initialReduxState)
 
   return getLayout(
     <CacheProvider value={emotionCache}>
@@ -33,7 +36,9 @@ export default function App(props: AppPropsWithLayout) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Component {...pageProps} />
+        <Provider store={store}>
+          <Component {...pageProps} />
+        </Provider>
       </ThemeProvider>
     </CacheProvider>
   )
